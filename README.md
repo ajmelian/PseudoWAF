@@ -24,10 +24,7 @@ PseudoWAF es una implementación básica de un Web Application Firewall (WAF) en
    - `banDuration`: Duración del baneo en segundos (por ejemplo, 86400 para 24 horas).
    - `iptablesCommand`: Ruta al comando iptables (`/sbin/iptables` por defecto).
    - `logFile`: Ruta al archivo de registro para IPs maliciosas (por ejemplo, `/var/log/php_malicious_ips.log`).
-3. **Configuración del Servidor:** Asegúrate de que el script PHP tenga permisos de ejecución para iptables. Puedes necesitar dar permisos de sudo sin contraseña para el comando iptables al usuario bajo el cual corre el servidor web (por ejemplo, www-data en Apache). Edita el archivo de sudoers usando visudo y añade la siguiente línea:
-```
-www-data ALL=(ALL) NOPASSWD: /sbin/iptables
-```
+3. **Configuración del Servidor:** Asegúrate de que el script PHP tenga permisos de ejecución para iptables. Puedes necesitar dar permisos de sudo sin contraseña para el comando iptables al usuario bajo el cual corre el servidor web (por ejemplo, www-data en Apache). Edita el archivo de sudoers usando visudo y añade la siguiente línea: `www-data ALL=(ALL) NOPASSWD: /sbin/iptables`
 
 ### Configuración de iptables
 
